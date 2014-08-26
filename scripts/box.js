@@ -1,42 +1,56 @@
-// see matrix in browser
-var Go = function(direction) {
-  move(matrix, direction);
-};
-
 $(document).ready(function(){
-	Go('startGame');
-	$(document).keydown(function(key){
-      
+	startGame();
+  draw(gameMatrix.matrix);
+  var undoMatrix = clone(gameMatrix.matrix);
+    undoTag.html('Undo ('+x+')');
+   $('#restartGame').click(function(){
+    gameMatrix.matrix = restartGame();
+    startGame();
+    draw(gameMatrix.matrix);
+    x = 3;
+    totalScore = 0;
+    $('.screen').append('<div id="score">' +totalScore+ '</div>');
+    undoTag.html('Undo ('+x+')');
+    undoMatrix = new Array();
+   }); 
+   $('#undo').click(function(){
+    if(x>0){
+      gameMatrix.matrix = undo();
+      draw(gameMatrix.matrix);
+      x--;
+      undoTag.html('Undo ('+x+')');
+    }
+  }); 
 
-      switch(parseInt(key.which,10)) {
+  	$(document).keydown(function(key){
+    switch(parseInt(key.which,10)) {
        // left Arrow
       case 37:
-        Go('left');
+        stopScroll();
+        undoMatrix = clone(gameMatrix.matrix); 
+        moveLeft(gameMatrix.matrix);
         break;
       case 38:
-        Go('up');
+        stopScroll();
+        undoMatrix = clone(gameMatrix.matrix); 
+        moveUp(gameMatrix.matrix);
         break;
       case 39:
-      	Go('right');
-      	break;
-      case 40:
-        Go('down');
+        stopScroll();
+        undoMatrix = clone(gameMatrix.matrix); 
+       	moveRight(gameMatrix.matrix);
         break;
-
+      case 40:
+        stopScroll();
+        undoMatrix = clone(gameMatrix.matrix); 
+        moveDown(gameMatrix.matrix);
+        break;
+      case 27:
+        gameMatrix.matrix = restartGame();
+        startGame();
+        draw(gameMatrix.matrix);
       }
+    gameOver(gameMatrix.matrix);
+        
   });
 });
-
-
-var ar=new Array(37,38,39,40);
-
-// $(document).keydown(function(e) {
-//      var key = e.which;
-//       //console.log(key);
-//       //if(key==35 || key == 36 || key == 37 || key == 39)
-//       if($.inArray(key,ar) > -1) {
-//           e.preventDefault();
-//           return false;
-//       }
-//       return true;
-// });

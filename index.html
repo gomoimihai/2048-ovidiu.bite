@@ -3,22 +3,20 @@
   <head>
   <title>2048</title>
 	<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
-	<script type="text/javascript" src="scripts/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="scripts/variables.js"></script>
-	<script type="text/javascript" src="scripts/tiles.js"></script>
-	<script type="text/javascript" src="scripts/matrix.js"></script>
-	<script type="text/javascript" src="scripts/box.js"></script>
-	
+	<link rel="stylesheet" type="text/css" href="stylesheet/reset.css">
   </head>
-
-
   <body>
     <div class="screen">
-      <div class="container"></div>
-
-
+      <button type='button' id='restartGame'>Restart</button>
+      <button type='button' id='undo'>Undo</button>
+      <div class="container rainbow"></div>
    	</div>
+	<script type="text/javascript" src="scripts/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="scripts/variables.js"></script>
+	<script type="text/javascript" src="scripts/tiles.js"></script>
+  <script type="text/javascript" src="scripts/util.js"></script>
+	<script type="text/javascript" src="scripts/matrix.js"></script>
+	<script type="text/javascript" src="scripts/box.js"></script>
   </body>
-
-
 </html>
