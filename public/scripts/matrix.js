@@ -263,7 +263,6 @@ var draw = function(matrix, position){
        addHtml(matrix[i][j], 'block').appendTo(container);
     container.append('<br/>')
   $('.score').html('Score' + '<p>'+totalScore+'</p>');
-    console.log(totalScore);
   }
 };
 

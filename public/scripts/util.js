@@ -51,8 +51,12 @@ function restartGame(){
       gameMatrix.matrix[i][j].value = 0;
     }
   }
+  x = 3;
+  totalScore = 0;
+  undoTag.removeAttr('disabled');
+  clearLocalStorage()
   return gameMatrix.matrix;
-}
+};
 
 function win(matrix, matrix3){
   var k1 = 0;
@@ -69,10 +73,17 @@ function win(matrix, matrix3){
   if(k1 === 1 && k2 == 0){
     $('<div class="game" style="display:none">'+"Congratulations!"+'<p>'+"You can continue the game or press esc to restart the game!"+'</p>'+'</div>').appendTo(container).fadeIn(1500);
     }
-}
+};
 
 
 function score(score){
   totalScore += score;
+  localStorage.setItem('score',JSON.stringify(totalScore) );
   return totalScore;
-}
+};
+
+function clearLocalStorage(){
+  window.localStorage.clear();
+  location.reload();
+  return false;
+};
