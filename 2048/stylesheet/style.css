@@ -1,0 +1,282 @@
+html {
+	height: 100%;
+}
+body{
+	background-color: #ebebeb;
+	height: 100%;
+}
+#title{
+  position: absolute;
+  top: 1.5%;
+  left: 40.5%;
+  font-size: 80px;
+  color: #f28f00;
+  font-family: "Lucida Console", "Bitstream Vera Sans Mono";
+}
+.screen{
+  background-color: #ebebeb;
+  height: 100%;
+  width: 100%;
+}
+#restartGame{
+  border: 2px solid #D6D59C;
+  border-radius: 3px;
+  height: 50px;
+  width: 130px;
+  position: absolute;
+  top: 58%;
+  left: 58%;
+  margin-left: 7px;
+  margin-top: 160px;
+  background-color: #D6D59C; 
+}
+#undo{
+  border: 2px solid #D6D59C;
+  border-radius: 3px;
+  height: 50px;
+  width: 130px;
+  position: absolute;
+  top: 58%;
+  left: 35%;
+  margin-left: 7px;
+  margin-top: 160px;
+  background-color: #D6D59C; 
+}
+.score{
+  border: 2px solid #D6D59C;
+  border-radius: 3px;
+  width: 130px;
+  position: absolute;
+  top: 1%;
+  left: 57.5%;
+  background-color: #D6D59C;
+  color:white;
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+}
+.score p{
+  font-size: 20px;
+}
+.container{
+  border-radius: 10px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -282px;
+  margin-left: -282px;
+  color: #fff;
+}
+.tile{
+  border-radius: 8px;
+  margin: 4px;
+  height: 125px;
+  width: 125px;
+  font: 50px arial;
+  float: left;
+  line-height: 120px;
+  text-align: center;
+}
+/*default template*/
+.default.container{
+  background-color: #56D7B8;
+  border: 8px solid #56D7B8;
+}
+.default .tile{
+  border: 2px solid #7c979b;
+  background-color: #7c979b;
+}
+.default .val2{
+  background-color: #528c93;
+}
+.default .val4{
+  background-color: #4d7a89;
+}
+.default .val8{
+  background-color: #337c74;
+}
+.default .val16{
+  background-color: #337c55;
+}
+.default .val32{
+  background-color: #1b633d;
+}
+.default .val64{
+  background-color: #197228;
+}
+.default .val128{
+  background-color: #3e7219;
+}
+.default .val256{
+  background-color: #6b7219;
+}
+.default .val512{
+  background-color: #725a19;
+}
+.default .val1024{
+  background-color: #723d19;
+  font: 40px arial;
+  line-height: 120px;
+}
+.default .val2048{
+  background-color: #7c1a1a;
+  font: 40px arial;
+  line-height: 120px;
+}
+.default .val4096{
+  background-color: #8e0505;
+  font: 40px arial;
+  line-height: 120px;
+}
+.default .val8192{
+  background-color: #ff0000;
+  font: 40px arial;
+  line-height: 120px;
+}
+/*rainbow template*/
+.rainbow.container{
+  background-color: #56D7B8;
+  border: 8px solid #56D7B8;
+}
+.rainbow .tile{
+  border: 2px solid #7c979b;
+  background-color: #7c979b;
+}
+.rainbow .val2{
+  background-color: #69D2E7;
+
+}
+.rainbow .val4{
+  background-color: #A7DBD8;
+  
+}
+.rainbow .val8{
+  background-color: #E0E4CC;
+  
+}
+.rainbow .val16{
+  background-color: #F38630;
+  
+}
+.rainbow .val32{
+  background-color: #FA6900;
+}
+.rainbow .val64{
+  background-color: #E23D26;
+  
+}
+.rainbow .val128{
+  background-color: #FB613E;
+  }
+.rainbow .val256{
+  background-color: #FBEE8B;
+  
+}
+.rainbow .val512{
+  background-color: #F19450;
+  
+}
+.rainbow .val1024{
+  background-color: #F2624C;
+  font: 40px arial;
+  line-height: 120px;
+}
+.rainbow .val2048{
+  background-color: #97220A;
+  font: 40px arial;
+  line-height: 120px;
+  
+}
+.rainbow .val4096{
+  background-color: #7A6864;
+  font: 40px arial;
+  line-height: 120px;
+}
+.rainbow .val8192{
+  background-color: #757A64;
+  font: 40px arial;
+  line-height: 120px;
+}
+/*warm template*/
+.warm.container{
+  background-color: #4C5F49;
+  border: 8px solid #4C5F49;
+}
+.warm .tile{
+  border: 2px solid #81AC7F;
+  background-color: #81AC7F;
+}
+.warm .val2{
+  background-color: #6F6F6F;
+
+}
+.warm .val4{
+  background-color: #544856;
+  
+}
+.warm .val8{
+  background-color: #4F3153;
+  
+}
+.warm .val16{
+  background-color: #31313D;
+  
+}
+.warm .val32{
+  background-color: #130409;
+  color:white;
+}
+.warm .val64{
+  background-color: #183629;
+}
+.warm .val128{
+  background-color: #6B9581;
+  }
+.warm .val256{
+  background-color: #97A78C;
+  
+}
+.warm .val512{
+  background-color: #9AA944;
+  
+}
+.warm .val1024{
+  background-color: #EDB429;
+  font: 40px arial;
+  line-height: 120px;
+}
+.warm .val2048{
+  background-color: #F8AFA6;
+  font: 40px arial;
+  line-height: 120px;
+  
+}
+.warm .val4096{
+  background-color: #54FA00;
+  font: 40px arial;
+  line-height: 120px;
+}
+.warm .val8192{
+  background-color: #BC02FF;
+  font: 40px arial;
+  line-height: 120px;
+}
+
+#info{
+  position: absolute;
+  top: 85%;
+  left: 29%;
+  right: 28%;
+  padding-left: 110px;
+  padding-right: 110px;
+ 
+}
+
+.game, .gameOver{
+  position: absolute;
+  background: rgba(238, 228, 218, 0.73);
+  z-index: 100;
+  text-align: center;
+  font-size: 40px;
+  color: #f28f00;
+}
