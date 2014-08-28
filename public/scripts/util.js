@@ -1,4 +1,4 @@
-var container = $('.container');
+var container = $('.container-2048');
 var undoTag =  $('#undo');
 var resetFlag = function(matrix){
 	for( var i = 0; i < MATRIX_SIZE; i++)
