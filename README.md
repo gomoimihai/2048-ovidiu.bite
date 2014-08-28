@@ -1,39 +1,36 @@
-Facebook/Heroku sample app -- Node.js
-=====================================
+# node-js-getting-started
 
-This is a sample app showing use of the Facebook Graph API, written in Node.js, designed for deployment to [Heroku](http://www.heroku.com/).
+A barebones Node.js app using [Express 4](http://expressjs.com/).
 
-Run locally
------------
+This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
-Install dependencies:
+## Running Locally
 
-    npm bundle install
+Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
-[Create an app on Facebook](https://developers.facebook.com/apps) and set the Website URL to `http://localhost:5000/`.
+```sh
+$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+$ cd node-js-getting-started
+$ npm install
+$ npm start
+```
 
-Copy the App ID and Secret from the Facebook app settings page into your `.env`:
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-    echo FACEBOOK_APP_ID=12345 >> .env
-    echo FACEBOOK_SECRET=abcde >> .env
+## Deploying to Heroku
 
-Launch the app with [Foreman](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html):
+```
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
 
-    foreman start
+## Documentation
 
-Deploy to Heroku via Facebook integration
------------------------------------------
+For more information about using Node.js on Heroku, see these Dev Center articles:
 
-The easiest way to deploy is to create an app on Facebook and click Cloud Services -> Get Started, then choose Node.js from the dropdown.  You can then `git clone` the resulting app from Heroku.
-
-Deploy to Heroku directly
--------------------------
-
-If you prefer to deploy yourself, push this code to a new Heroku app on the Cedar stack, then copy the App ID and Secret into your config vars:
-
-    heroku create --stack cedar
-    git push heroku master
-    heroku config:add FACEBOOK_APP_ID=12345 FACEBOOK_SECRET=abcde
-
-Enter the URL for your Heroku app into the Website URL section of the Facebook app settings page, hen you can visit your app on the web.
-
+- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
+- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
+- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
+- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
