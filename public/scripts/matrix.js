@@ -14,23 +14,6 @@ var createMatrix = function(){
 };
 
 // get positions for empty cells with value 0
-var getEmptyCell = function(matrix){
-  var emptyCell = new Array(MATRIX_SIZE*MATRIX_SIZE);
-  for( i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++)
-    emptyCell[i] = new Array(2);
-  var l = 0;
-  for(i = 0; i < MATRIX_SIZE; i++){
-    for(j = 0; j < MATRIX_SIZE; j++)
-      if(matrix[i][j].value === 0){
-        emptyCell[l][0] = i;
-        emptyCell[l][1] = j;
-        l++;
-      }
-  }
-  //set the length of emptyCell to not have undefined cells	
-  emptyCell.length = l;
-  return emptyCell;
-};
 
 
 
@@ -47,6 +30,24 @@ var startGame = function(){
   emptCell = getEmptyCell(gameMatrix.matrix);
   x = randPosition(emptCell);
   gameMatrix.matrix[x[0]][x[1]].value = 2   ;
+};
+
+var getEmptyCell = function(matrix){
+  var emptyCell = new Array(MATRIX_SIZE*MATRIX_SIZE);
+  for( i = 0; i < MATRIX_SIZE*MATRIX_SIZE; i++)
+    emptyCell[i] = new Array(2);
+  var l = 0;
+  for(i = 0; i < MATRIX_SIZE; i++){
+    for(j = 0; j < MATRIX_SIZE; j++)
+      if(matrix[i][j].value === 0){
+        emptyCell[l][0] = i;
+        emptyCell[l][1] = j;
+        l++;
+      }
+  }
+  //set the length of emptyCell to not have undefined cells 
+  emptyCell.length = l;
+  return emptyCell;
 };
 
 var insertTile = function(matrix){
@@ -285,6 +286,9 @@ function compareElements(matrix, matrix2){
 };
 
 function undo(){
+console.log(undoMatrix);
+    console.log(undoMatrix.length);
+
  var matrix = undoMatrix[undoMatrix.length-1];
  undoMatrix.length = undoMatrix.length-1;
  totalScore = undoScore[undoScore.length-1];

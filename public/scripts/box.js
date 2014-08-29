@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var undoMatrix = clone(gameMatrix.matrix);
 	if(localStorage.getItem("matrix")){
     gameMatrix.matrix = JSON.parse(localStorage.getItem("matrix"));
     totalScore = JSON.parse(localStorage.getItem("score"));
@@ -9,7 +10,6 @@ $(document).ready(function(){
     startGame();
     draw(gameMatrix.matrix);
 
-  var undoMatrix = clone(gameMatrix.matrix);
   undoTag.html('Undo ('+x+')');
     $('#restartGame').click(function(){
       gameMatrix.matrix = restartGame();
@@ -21,6 +21,8 @@ $(document).ready(function(){
 
     }); 
    undoTag.click(function(){
+    console.log(undoMatrix);
+    console.log(undoMatrix.length);
     if(x>0){
       gameMatrix.matrix = undo();
       draw(gameMatrix.matrix);
@@ -29,6 +31,7 @@ $(document).ready(function(){
       if(x === 0)
          undoTag.attr("disabled", "disabled");
    }    
+   
    localStorage.setItem('leftUndo', JSON.stringify(x));
   }); 
 
@@ -64,7 +67,7 @@ $(document).ready(function(){
         startGame();
         draw(gameMatrix.matrix);
       }
-    gameOver(gameMatrix.matrix);
+   gameOver(gameMatrix.matrix);
         
   });
 });

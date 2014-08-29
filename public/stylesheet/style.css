@@ -237,8 +237,10 @@ margin-left: 110px;
   line-height: 120px;
 }
 
-.game, .gameOver{
+.game{
   position: absolute;
+  right: 220px;
+  left: 220px;
   background: rgba(238, 228, 218, 0.73);
   z-index: 100;
   text-align: center;
