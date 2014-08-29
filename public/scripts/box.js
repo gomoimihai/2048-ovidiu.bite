@@ -9,20 +9,17 @@ $(document).ready(function(){
   else
     startGame();
     draw(gameMatrix.matrix);
-
-  undoTag.html('Undo ('+x+')');
+    undoTag.html('Undo ('+x+')');
+   
     $('#restartGame').click(function(){
       gameMatrix.matrix = restartGame();
-      startGame();
       draw(gameMatrix.matrix);
       $('.score').html('Score' + '<p>'+totalScore+'</p>');
       undoTag.html('Undo ('+x+')');
       undoMatrix.length = 0;
 
     }); 
-   undoTag.click(function(){
-    console.log(undoMatrix);
-    console.log(undoMatrix.length);
+      undoTag.click(function(){
     if(x>0){
       gameMatrix.matrix = undo();
       draw(gameMatrix.matrix);
