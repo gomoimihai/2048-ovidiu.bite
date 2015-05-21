@@ -3,8 +3,16 @@ $(document).ready(function(){
 		var templateName = $(this).data('template-name');
 		container.removeClass('default warm rainbow').addClass(templateName);
 	});
+});
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '505733166238228',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
 
-	// Place following code after FB.init call.
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+    	// Place following code after FB.init call.
 	function onLogin(response) {
 	  if (response.status == 'connected') {
 	    FB.api('/me?fields=first_name', function(data) {
@@ -26,4 +34,12 @@ $(document).ready(function(){
 	    }, {scope: 'user_friends, email'});
 	  }
 	});
-});
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
