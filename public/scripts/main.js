@@ -34,6 +34,16 @@ $(document).ready(function(){
 	    }, {scope: 'user_friends, email'});
 	  }
 	});
+	
+	FB.api(
+	    "/casa.bunicii/feed",
+	    function (response) {
+	      if (response && !response.error) {
+	        /* handle the result */
+	        console.log(response);
+	      }
+	    }
+	);
   };
 
   (function(d, s, id){
